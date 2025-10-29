@@ -111,6 +111,7 @@ All data was imported into Supabase (PostgreSQL) for querying.
 ---
 
 ## 🧱 Folder Structure
+<pre>
 📦 AI-Property-Chat
 ├── 📁 src
 │ ├── 📁 app
@@ -145,6 +146,7 @@ All data was imported into Supabase (PostgreSQL) for querying.
 ├── next.config.js       # Next.js configuration
 ├── README.md
 └── vercel.json (optional) # Vercel deployment configuration
+</pre>
 
 
 
