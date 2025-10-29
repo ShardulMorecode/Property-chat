@@ -100,41 +100,7 @@ npm start
 ## 🌐 Live Demo
 
 Live link (deployed on Vercel):
-👉 [https://your-project-name.vercel.app](https://your-project-name.vercel.app)
-
----
-
-## 🛠️ Deployment (Vercel)
-
-1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
-2. Click **New Project → Import Git Repository**.
-3. Select this repo and configure:
-
-   * **Build command:** `npm run build`
-   * **Output directory:** (leave empty for Next.js)
-4. Add the same environment variables from `.env.local` under
-   **Settings → Environment Variables** in Vercel.
-5. Click **Deploy**.
-
-Vercel will automatically create a live link for your project.
-
----
-
-## 👥 Collaborators
-
-| Name           | GitHub                                             |
-| -------------- | -------------------------------------------------- |
-| Shardul More   | [@batty-sk](https://github.com/batty-sk)           |
-| Prathamesh Zad | [@Prathameshzad](https://github.com/Prathameshzad) |
-
----
-
-## 📽️ Submission Format
-
-* **GitHub Repo URL:** (add your repo link here)
-* **Live Demo URL:** (your deployed Vercel link)
-* **Optional Loom Demo:** short 2–3 minute walkthrough
-  showing the app features, setup, and demo.
+👉 [https://property-chat-five.vercel.app/](https://property-chat-five.vercel.app/)
 
 ---
 
