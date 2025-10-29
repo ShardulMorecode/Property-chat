@@ -563,7 +563,7 @@ export default function Page() {
             <Sparkles size={28} color="white" />
           </HeaderIcon>
           <div>
-            <h1 style={{ fontWeight: 900, fontSize: 24, marginBottom: 4 }}>AI Property Assistant</h1>
+            <h1 style={{ fontWeight: 900, fontSize: 24, marginBottom: 4 }}>Property Search Assistant</h1>
             <p style={{ color: '#64748b', fontSize: 14, fontWeight: 500 }}>Powered by advanced search algorithms</p>
           </div>
         </Header>
@@ -682,7 +682,7 @@ export default function Page() {
           </InputBox>
           <div style={{ textAlign: 'center', marginTop: 12, fontSize: 12, color: '#64748b', fontWeight: 600 }}>
             <Sparkles size={14} style={{ display: 'inline', marginRight: 6 }} />
-            AI-powered property search • Results from verified listings only
+            Best Property search • Results from verified listings only
           </div>
         </InputArea>
       </MainArea>
