@@ -1,6 +1,24 @@
 import { supabase } from './supabase';
 import { SearchFilters, PropertyResult } from '@/types';
 
+// src/lib/search.ts
+export interface PropertyResult {
+  project_id: string;
+  project_name: string;
+  project_type?: string;
+  status?: string;
+  bhk_type?: string;
+  price_min: number;
+  price_max: number;
+  carpet_area_min?: number;
+  carpet_area_max?: number;
+  address?: string;
+  landmark?: string;
+  pincode?: string;
+  project_summary?: string;
+  slug?: string;
+}
+
 export async function searchProperties(filters: SearchFilters): Promise<PropertyResult[]> {
   try {
     // Build complex query with joins
