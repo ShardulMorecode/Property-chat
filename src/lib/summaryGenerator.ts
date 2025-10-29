@@ -10,7 +10,7 @@ export function generateSummary(properties: PropertyResult[], filters: ParsedQue
   const city = filters.city || 'Mumbai and Pune';
   const bhk = filters.bhk ? `${filters.bhk} BHK` : 'properties';
 
-  // ✅ Use price_min and price_max instead of price
+  // ✅ Use price_min and price_max (not price)
   const allPrices = properties
     .flatMap(p => [p.price_min, p.price_max])
     .filter(p => typeof p === 'number' && p > 0);
@@ -23,17 +23,17 @@ export function generateSummary(properties: PropertyResult[], filters: ParsedQue
   const minPrice = Math.min(...allPrices);
   const maxPrice = Math.max(...allPrices);
 
-  // ✅ Price formatter
+  // ✅ Format price range in Lakhs/Cr
   const formatPrice = (price: number): string => {
     if (price >= 100) return `₹${(price / 100).toFixed(2)} Cr`;
     return `₹${price.toFixed(1)} L`;
   };
 
-  // Count by status
+  // ✅ Count by status
   const readyCount = properties.filter(p => p.status === 'READY_TO_MOVE').length;
   const underConstructionCount = properties.filter(p => p.status === 'UNDER_CONSTRUCTION').length;
 
-  // Build summary
+  // ✅ Build base summary
   let summary = `I found ${count} ${bhk} ${filters.city ? `in ${city}` : 'across Mumbai and Pune'}`;
 
   if (allPrices.length > 0) {
@@ -48,9 +48,9 @@ export function generateSummary(properties: PropertyResult[], filters: ParsedQue
     summary += `. All properties are under construction.`;
   }
 
-  // Optional: highlight locality or city
-  if (filters.locality) {
-    summary += ` Most results are around ${filters.locality}.`;
+  // ✅ Add locality info (supports array)
+  if (filters.localities && filters.localities.length > 0) {
+    summary += ` Most results are around ${filters.localities.join(', ')}.`;
   }
 
   return summary.trim();
