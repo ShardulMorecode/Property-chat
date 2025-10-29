@@ -112,27 +112,8 @@ All data was imported into Supabase (PostgreSQL) for querying.
 ---
 
 ## 🧱 Folder Structure
-property-chat/
-├── src/
-│ ├── app/
-│ │ └── api/
-│ │ └── chat/route.ts # Chat API (core logic)
-│ ├── lib/
-│ │ ├── queryParser.ts # NLP for extracting filters (city, BHK, price, etc.)
-│ │ ├── search.ts # Supabase property retrieval logic
-│ │ ├── summaryGenerator.ts # Data-grounded summary generator
-│ │ ├── supabase.ts # Supabase client setup
-│ │ └── utils.ts # Helper utilities
-│ ├── components/ # React components (chat UI)
-│ └── styles/ # Styling and CSS
-├── public/ # Static assets
-├── data/
-│ └── projects.csv # Sample project dataset
-├── .env.example # Environment variable sample
-├── next.config.js # Next.js configuration
-├── package.json
-├── tsconfig.json
-└── README.md
+<img width="809" height="526" alt="image" src="https://github.com/user-attachments/assets/079e6f8d-dc1d-4179-a75f-9c07b1b1769c" />
+
 
 ##🧠 How It Works
 
