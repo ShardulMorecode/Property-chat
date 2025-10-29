@@ -12,9 +12,15 @@ and responds with:
 
 ## 🚀 Live Demo
 
-**Live Website:** [https://property-chat.vercel.app](https://property-chat-five.vercel.app/) .
-**GitHub Repository:** [https://github.com/your-username/property-chat](https://github.com/ShardulMorecode/Property-chat.git) .
-**Demo:** [https://drive.google.com/file/](https://drive.google.com/file/d/1-TBZfmCcD-IKToPqH3sqQjmrD2yDZK4g/view?usp=sharing) .
+# 🔗 Live Website  
+[https://property-chat-five.vercel.app](https://property-chat-five.vercel.app)
+
+# 💻 GitHub Repository  
+[https://github.com/ShardulMorecode/Property-chat](https://github.com/ShardulMorecode/Property-chat.git)
+
+# 🎥 Project Demo (Google Drive)  
+[https://drive.google.com/file/d/1-TBZfmCcD-IKToPqH3sqQjmrD2yDZK4g/view?usp=sharing](https://drive.google.com/file/d/1-TBZfmCcD-IKToPqH3sqQjmrD2yDZK4g/view?usp=sharing)
+
 
 ---
 
