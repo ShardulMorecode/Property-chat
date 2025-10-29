@@ -9,32 +9,34 @@ export function generateSummary(properties: PropertyResult[], filters: ParsedQue
   const count = properties.length;
   const city = filters.city || 'Mumbai and Pune';
   const bhk = filters.bhk ? `${filters.bhk} BHK` : 'properties';
-  
-  // Calculate price statistics
-  const prices = properties.filter(p => p.price).map(p => p.price!);
-  const avgPrice = prices.length > 0 ? prices.reduce((a, b) => a + b, 0) / prices.length : 0;
-  
-  // Format price ranges
+
+  // ✅ Use price_min and price_max (not price)
+  const allPrices = properties
+    .flatMap(p => [p.price_min, p.price_max])
+    .filter(p => typeof p === 'number' && p > 0);
+
+  const avgPrice =
+    allPrices.length > 0
+      ? allPrices.reduce((a, b) => a + b, 0) / allPrices.length
+      : 0;
+
+  const minPrice = Math.min(...allPrices);
+  const maxPrice = Math.max(...allPrices);
+
+  // ✅ Format price range in Lakhs/Cr
   const formatPrice = (price: number): string => {
-    if (price >= 10000000) return `₹${(price / 10000000).toFixed(1)} Cr`;
-    return `₹${(price / 100000).toFixed(1)} L`;
+    if (price >= 100) return `₹${(price / 100).toFixed(2)} Cr`;
+    return `₹${price.toFixed(1)} L`;
   };
 
-  const minPrice = Math.min(...prices);
-  const maxPrice = Math.max(...prices);
-
-  // Count by status
+  // ✅ Count by status
   const readyCount = properties.filter(p => p.status === 'READY_TO_MOVE').length;
   const underConstructionCount = properties.filter(p => p.status === 'UNDER_CONSTRUCTION').length;
 
-  // Count by furnishing
-  const furnishedCount = properties.filter(p => p.furnished_type === 'FURNISHED').length;
-  const semiFurnishedCount = properties.filter(p => p.furnished_type === 'SEMI_FURNISHED').length;
-
-  // Build summary
+  // ✅ Build base summary
   let summary = `I found ${count} ${bhk} ${filters.city ? `in ${city}` : 'across Mumbai and Pune'}`;
 
-  if (prices.length > 0) {
+  if (allPrices.length > 0) {
     summary += ` with prices ranging from ${formatPrice(minPrice)} to ${formatPrice(maxPrice)}`;
   }
 
@@ -46,17 +48,10 @@ export function generateSummary(properties: PropertyResult[], filters: ParsedQue
     summary += `. All properties are under construction.`;
   }
 
-  // Add furnishing info if relevant
-  if (filters.furnishing) {
-    const furnishingType = filters.furnishing.toLowerCase();
-    summary += ` All properties are ${furnishingType}.`;
-  } else if (furnishedCount > 0 || semiFurnishedCount > 0) {
-    if (furnishedCount > semiFurnishedCount) {
-      summary += ` Most properties come furnished.`;
-    } else if (semiFurnishedCount > furnishedCount) {
-      summary += ` Most properties are semi-furnished.`;
-    }
+  // ✅ Add locality info (supports array)
+  if (filters.localities && filters.localities.length > 0) {
+    summary += ` Most results are around ${filters.localities.join(', ')}.`;
   }
 
-  return summary;
+  return summary.trim();
 }
