@@ -1,27 +1,166 @@
-# Project Title
+# 🏠 Property Chat
 
-Short one-liner.
+An interactive real-estate platform that lets users explore, chat, and analyze property data in real-time.
+Built with **Next.js**, **Node.js**, and integrated APIs for property listings and insights.
 
-## Requirements
-- Node 18+ (or the version in package.json)
+---
 
-## Setup (local)
-1. `git clone <YOUR-REPO-URL>`
-2. `cd repo`
-3. `npm install`
-4. `cp .env.example .env.local` (edit `.env.local` to add API keys)
-5. `npm run dev` to start locally
+## 📁 Project Structure
 
-## Data
-- Example CSV at `/data/sample.csv`. Use this file to test.
+```
+property-chat/
+│
+├── /data/                → contains sample dataset (sample.csv)
+├── /pages/               → frontend routes (Next.js)
+├── /api/                 → backend API routes
+├── /components/          → reusable UI components
+├── package.json          → dependencies & scripts
+├── .env.example          → template for environment variables
+├── README.md             → setup & usage guide
+└── .gitignore            → ignored build and env files
+```
 
-## Scripts
-- `npm run dev` - development
-- `npm run build` - build for production
-- `npm run start` - start server after build
+---
 
-## Live demo
-- Demo URL: https://your-live-demo-url
+## ⚙️ Tech Stack
 
-## Notes
-- `.env.local` is not committed. Use `.env.example` to see required variables.
+* **Frontend:** Next.js (React + TailwindCSS)
+* **Backend:** Node.js / Express (via Next.js API routes)
+* **Database:** Optional (MongoDB / Firebase / Local CSV)
+* **Deployment:** Vercel
+* **Version Control:** Git + GitHub
+
+---
+
+## 📊 Sample Data
+
+You can find a small sample dataset inside `/data/sample.csv`.
+This file helps test CSV reading and backend parsing features.
+
+Example:
+
+```csv
+id,property_name,price,location
+1,Sunshine Residency,9500000,Mumbai
+2,Lake View Apartments,8500000,Pune
+3,Green Valley Homes,7200000,Nashik
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/<your-username>/property-chat.git
+cd property-chat
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Environment variables
+
+Copy the example file and update values as needed:
+
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` with your actual keys (don’t commit it):
+
+```
+NEXT_PUBLIC_API_URL=https://your-api-url.com
+DATABASE_URL=mongodb+srv://...
+```
+
+### 4. Run locally
+
+```bash
+npm run dev
+```
+
+This starts the development server at [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 🧱 Build for production
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 🌐 Live Demo
+
+Live link (deployed on Vercel):
+👉 [https://your-project-name.vercel.app](https://your-project-name.vercel.app)
+
+---
+
+## 🛠️ Deployment (Vercel)
+
+1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
+2. Click **New Project → Import Git Repository**.
+3. Select this repo and configure:
+
+   * **Build command:** `npm run build`
+   * **Output directory:** (leave empty for Next.js)
+4. Add the same environment variables from `.env.local` under
+   **Settings → Environment Variables** in Vercel.
+5. Click **Deploy**.
+
+Vercel will automatically create a live link for your project.
+
+---
+
+## 👥 Collaborators
+
+| Name           | GitHub                                             |
+| -------------- | -------------------------------------------------- |
+| Shardul More   | [@batty-sk](https://github.com/batty-sk)           |
+| Prathamesh Zad | [@Prathameshzad](https://github.com/Prathameshzad) |
+
+---
+
+## 📽️ Submission Format
+
+* **GitHub Repo URL:** (add your repo link here)
+* **Live Demo URL:** (your deployed Vercel link)
+* **Optional Loom Demo:** short 2–3 minute walkthrough
+  showing the app features, setup, and demo.
+
+---
+
+## 🧩 Notes
+
+* Do **not** commit `.env.local` (keep secrets private).
+* `.env.example` is provided as a template.
+* The `/data/` folder includes a sample CSV for testing.
+* The repo is cleaned up (no `node_modules` or `.next` folders).
+
+---
+
+## 💡 Example Commands
+
+| Purpose                 | Command         |
+| ----------------------- | --------------- |
+| Start dev server        | `npm run dev`   |
+| Build for production    | `npm run build` |
+| Start production server | `npm start`     |
+| Format code             | `npm run lint`  |
+
+---
+
+## 🏁 End Notes
+
+This project demonstrates a clean full-stack setup with Next.js + Node.js, environment-based configuration, and a structured data flow.
+For any issues or suggestions, feel free to open a pull request or report them in GitHub Issues.
+
+---
