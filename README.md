@@ -112,7 +112,46 @@ All data was imported into Supabase (PostgreSQL) for querying.
 ---
 
 ## 🧱 Folder Structure
-<img width="809" height="526" alt="image" src="https://github.com/user-attachments/assets/079e6f8d-dc1d-4179-a75f-9c07b1b1769c" />
+📦 AI-Property-Chat
+├── 📁 src
+│   ├── 📁 app
+│   │   ├── 📁 api
+│   │   │   ├── 📁 chat
+│   │   │   │   └── route.ts        # Main backend route (query handling, summarization, retrieval)
+│   │   │   └── 📁 test
+│   │   │       └── route.ts        # Optional test API endpoint
+│   │   ├── page.tsx                # Frontend chat interface (UI)
+│   │   └── layout.tsx              # Layout for consistent UI structure
+│   │
+│   ├── 📁 lib
+│   │   ├── search.ts               # Property search logic
+│   │   ├── queryParser.ts          # NLP-based filter extraction
+│   │   ├── summaryGenerator.ts     # Summary generation logic
+│   │   ├── supabase.ts             # Supabase client setup
+│   │   └── utils.ts (optional)     # Helper functions (if used)
+│   │
+│   ├── 📁 components
+│   │   └── ChatUI.tsx              # Chat frontend component
+│   │
+│   └── 📁 types
+│       └── index.ts                # Shared TypeScript types/interfaces
+│
+├── 📁 public
+│   └── favicon.ico                 # Default favicon
+│
+├── 📁 data
+│   ├── project.csv                 # Sample dataset
+│   ├── ProjectAddress.csv          # Project address details
+│   ├── ProjectConfiguration.csv    # Project configuration details
+│   └── ProjectConfigurationVariant.csv # Project variant details
+│
+├── .env.example                    # Example environment variables (Supabase URL & Key)
+├── package.json                    # Project dependencies and scripts
+├── tsconfig.json                   # TypeScript configuration
+├── next.config.js                  # Next.js configuration
+├── README.md                       # Project documentation
+└── vercel.json (optional)          # Vercel deployment configuration
+
 
 
 ##🧠 How It Works
