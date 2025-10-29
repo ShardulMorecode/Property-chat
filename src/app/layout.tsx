@@ -5,8 +5,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'NoBrokerage - AI Property Assistant',
-  description: 'Find your dream home with AI-powered property search',
+  title: 'NoBrokerage - Property Assistant',
+  description: 'Find your dream home with our property search',
 };
 
 export default function RootLayout({

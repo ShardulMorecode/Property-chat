@@ -441,7 +441,7 @@ export default function Page() {
     {
       id: '1',
       role: 'assistant',
-      content: "Hello! I'm your AI property assistant. I can help you find your dream home. Try asking me something like 'Show me 3BHK flats in Pune under ₹1.2 Cr' or 'Ready to move apartments in Baner'."
+      content: "Hello! I'm your property assistant. I can help you find your dream home. Try asking me something like 'Show me 3BHK flats in Pune under ₹1.2 Cr' or 'Ready to move apartments in Baner'."
     }
   ]);
   const [input, setInput] = useState('');
@@ -532,7 +532,7 @@ export default function Page() {
           setMessages([{
             id: '1',
             role: 'assistant',
-            content: "Hello! I'm your AI property assistant. How can I help you find your dream home today?"
+            content: "Hello! I'm your property assistant. How can I help you find your dream home today?"
           }]);
         }}>
           <Sparkles size={20} />
